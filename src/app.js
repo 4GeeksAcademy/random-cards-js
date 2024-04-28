@@ -1,7 +1,5 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
@@ -34,7 +32,30 @@ const cartas = [
   "A"
 ];
 
-window.onload = function() {
+const generarCarta = () => {
   const cartaAleatoria = cartas[Math.floor(Math.random() * cartas.length)];
-  console.log(cartaAleatoria + palos());
+  const simbolo = palos();
+  const simboloTop = document.querySelector(".simbolo-top");
+  const simboloBottom = document.querySelector(".simbolo-bottom");
+  const num = document.querySelector(".num");
+  const card = document.querySelector(".card");
+
+  const width = document.getElementById("width").value;
+  const height = document.getElementById("height").value;
+
+  card.style.width = `${width}px`;
+  card.style.height = `${height}px`;
+
+  simboloTop.textContent = simbolo;
+  simboloBottom.textContent = simbolo;
+  num.textContent = cartaAleatoria;
+};
+
+window.onload = () => {
+  generarCarta();
+
+  const newCardButton = document.getElementById("newCard");
+  newCardButton.addEventListener("click", generarCarta);
+
+  setInterval(generarCarta, 10000);
 };

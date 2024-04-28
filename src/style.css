@@ -1,22 +1,79 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 body {
-  height: 100%;
+  height: 100vh;
   margin: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: green;
+  background-color: rgb(255, 251, 230);
 }
 
-/*.container {
-  text-align: center;
-}*/
-
 .card {
-  width: 500px;
-  height: 600px;
   border: 5px solid black;
   border-radius: 10px;
   display: inline-block;
+  position: relative;
+}
+
+.simbolo-top {
+  font-size: 70px;
+  margin-left: 20px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 0;
+}
+
+.simbolo-bottom {
+  font-size: 70px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.num {
+  font-size: 150px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 1;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  margin-right: 10px;
+}
+
+#width,
+#height {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+#newCard {
+  background-color: #c4a1d1;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#newCard:hover {
+  background-color: #8f6295;
 }
